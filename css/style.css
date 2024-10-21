@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gowun Batang", serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.portada {
+    background-image: url(../img/Portada.jpg);
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    /* background: rgba(12, 12, 12, 0.135);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.767); */
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+
+}
+
+.nav-list a {
+    position: relative;/* Necesario para el ::before */
+    text-decoration: none;
+    color: #090909cb;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-list a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #FF4500;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-list a:hover {
+    color: #FF4500;
+}
+
+.nav-list a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+li {
+
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    
+}
+
+@media screen and (max-width: 780px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        
+    }
+
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fa43004c;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+        gap: 1px;
+    } 
+}

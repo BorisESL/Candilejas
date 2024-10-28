@@ -7,7 +7,11 @@
     <title>Candilejas Hospedaje</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,13 +21,17 @@
 <body class="portada">
 
     <header>
-        <img class="logo" src="./img/logo1.png" alt="">
-        <button class="abrir-menu" id="abrir">Abrir</button>
-        <nav class="nav" id="nav">
-            <button id="cerrar">Cerrar</button>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a href="#" class="enlace">
+                <img class="logo" src="./img/logo1.png" alt="">
+            </a>
             <ul class="nav-list">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Quienes Somos</a></li>
+                <li><a  class="active" href="#">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Habitaciones</a></li>
                 <li><a href="#">Ubicación</a></li>
@@ -31,7 +39,16 @@
             </ul>
         </nav>
     </header>
-    
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Candilejas Hospedaje Familiar</h2>
+            <h1>Descubre la mejor opción para disfrutar de unas vacaciones en familia</h1>
+            <p>" En la comuna de Arauco, <STrong>Candilejas</STrong> ofrece un ambiente acogedor para disfrutar en familia. "</p>
+            <a href="#" class="btn-reservar">Reservar</a>
+        </div>
+    </section>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

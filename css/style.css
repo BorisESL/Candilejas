@@ -1,46 +1,65 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
-    font-family: "Gowun Batang", serif;
+    font-family: "Roboto", sans-serif;
 }
 
-body {
-    height: 100vh;
+:root {
+    --color-primary: #FF4500;
+    --color-secondary: rgb(9, 167, 240);
+    --color-accent: #7b2cbf;
+    --color-background: #f7fff7;
+    --color-text: #000000;
+    --color-black-transparent: rgba(0, 0, 0, 0.772);
+    --color-pinky: #ee156c;
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--color-background);
+    height: 120px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.enlace {
+    position: absolute;
+    padding: 20px 50px;
 }
 
 .logo {
-    max-width: 100px;
+    height: 80px;
 }
 
-.portada {
-    background-image: url(../img/Portada.jpg);
-    background-size: cover;
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
-    /* background: rgba(12, 12, 12, 0.135);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.767); */
+nav {
+    position: relative;
+    z-index: 1000;
 }
 
 .nav-list {
-    list-style-type: none;
-    display: flex;
-    gap: 2rem;
-
+    float: right;
+    margin-right: 20px;
 }
 
-.nav-list a {
-    position: relative;/* Necesario para el ::before */
-    text-decoration: none;
-    color: #090909cb;
-    transition: color 0.3s ease-in-out;
+.nav-list li {
+    display: inline-block;
+    line-height: 120px;
+    margin: 0 5px;
+}
+
+.nav-list li a {
+    position: relative;
+    color: #000000;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
 }
 
 .nav-list a::before {
@@ -65,52 +84,132 @@ header {
     width: 100%;
 }
 
-li {
-
-    margin: 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.abrir-menu,
-.cerrar-menu {
+.checkbtn {
+    font-size: 30px;
+    color: var(--color-text);
+    float: right;
+    line-height: 120px;
+    margin-right: 20px;
+    cursor: pointer;
     display: none;
-    position: absolute;
-    right: 20px;
-    
 }
 
-@media screen and (max-width: 780px) {
-    .abrir-menu,
-    .cerrar-menu {
+#check {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/Portada.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    position: relative;
+}
+
+.hero-text {
+    color: white;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: 10%; /* Restaurado el margen izquierdo */
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    margin-bottom: 1rem;
+}
+
+.btn-reservar {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--color-primary);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reservar:hover {
+    background-color: #ff5a1a;
+}
+
+/* Media Queries */
+@media (max-width: 998px) {
+    .enlace {
+        padding-left: 20px;
+    }
+    .nav-list li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 897px) {
+    .checkbtn {
         display: block;
-        
-    }
-
-    .nav {
-        opacity: 0;
-        visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        gap: 1rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #fa43004c;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-    }
-
-    .nav.visible {
-        opacity: 1;
-        visibility: visible;
     }
 
     .nav-list {
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 120px);
+        background: var(--color-black-transparent);
+        top: 120px;
+        left: -100%;
+        display: flex;
         flex-direction: column;
-        align-items: end;
-        gap: 1px;
-    } 
+        justify-content: flex-start;
+        align-items: center;
+        transition: all .5s;
+        z-index: 3;
+        overflow-y: auto;
+    }
+
+    .nav-list li {
+        display: block;
+        margin: 30px 0;
+        line-height: 30px;
+    }
+
+    .nav-list li a {
+        font-size: 20px;
+        color: var(--color-background);
+    }
+
+    .hero-text {
+        margin-left: 5%; /* Mantenemos un pequeño margen en móvil */
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
 }

@@ -115,7 +115,7 @@ nav {
     color: white;
     padding: 0 20px;
     max-width: 1200px;
-    margin-left: 10%; /* Restaurado el margen izquierdo */
+    margin-left: 10%;
     text-align: left;
     position: relative;
     z-index: 1;
@@ -153,11 +153,318 @@ nav {
     background-color: #ff5a1a;
 }
 
+/* galería de habitaciones */
+.room-gallery {
+    padding: 80px 20px;
+    background-color: #f5f5f5;
+    margin-bottom: 80px;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.room-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-15px);
+}
+
+.room-main {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.room-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.778);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.room-card:hover .room-overlay {
+    opacity: 1;
+}
+
+.room-details {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.room-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.room-price {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.room-info {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.room-info p {
+    display: flex; /* Para alinear el ícono y el texto en la misma línea */
+    align-items: center;
+    margin: 10px 0; 
+}
+
+.room-info i {
+    margin-right: 8px;
+    color: var(--color-primary);
+}
+
+.room-gallery-thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.room-gallery-thumbs img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid var(--color-primary);
+}
+
+.btn-reservar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.6s ease;
+}
+
+.btn-reservar:hover {
+    background-color: rgba(255, 68, 0, 0.702);
+}
+
+/* Servicios */
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    height: 100vh;
+    box-sizing: border-box;
+    
+}
+
+/* Título de la sección */
+.section-title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+/* Contenedor de las tarjetas de servicio */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Estilo de cada tarjeta de servicio */
+.service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+/* Imagen dentro de cada tarjeta con efecto de zoom */
+.service-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.1s;
+}
+
+/* Efecto de zoom en la imagen al hacer hover */
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Capa de superposición oscura para el efecto de oscurecimiento */
+.service-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s;
+    pointer-events: none;
+}
+
+.service-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.service-card::after {
+    content: "";
+    display: block;
+    height: 8px;
+    background-color: var(--color-primary);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Información del servicio */
+.service-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-text);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.service-info a {
+    color: #fff;
+    display: block;
+}
+
+.service-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+
+/*Nosotros*/
+
+/* Sección principal */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10vw;
+    /* Aumenta el espacio a los lados */
+    background-color: #f3f0ec;
+    /* Color de fondo claro */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    /* Para centrado de fondo en pantallas grandes */
+}
+
+
+/* Contenedor de contenido */
+.about-content {
+    flex: 1;
+    max-width: 600px;
+    padding: 0 40px;
+}
+
+/* Título */
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Texto descriptivo */
+.about-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botón de contacto */
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #333;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Contenedor de imagen */
+.about-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+
 /* Media Queries */
 @media (max-width: 998px) {
     .enlace {
         padding-left: 20px;
     }
+
     .nav-list li a {
         font-size: 16px;
     }
@@ -172,7 +479,7 @@ nav {
         position: fixed;
         width: 100%;
         height: calc(100vh - 120px);
-        background: var(--color-black-transparent);
+        background: var(--color-text);
         top: 120px;
         left: -100%;
         display: flex;
@@ -196,7 +503,8 @@ nav {
     }
 
     .hero-text {
-        margin-left: 5%; /* Mantenemos un pequeño margen en móvil */
+        margin-left: 5%;
+        /* Mantenemos un pequeño margen en móvil */
         text-align: center;
         padding: 0 20px;
     }
@@ -204,12 +512,102 @@ nav {
     .hero-text h1 {
         font-size: 2rem;
     }
-    
+
     .hero-text h2 {
         font-size: 1.2rem;
     }
 
-    #check:checked ~ ul {
+    #check:checked~ul {
         left: 0;
+    }
+}
+
+/* Responsive galeria */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .room-main {
+        height: 300px;
+    }
+
+    .room-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .room-price {
+        font-size: 1.1rem;
+    }
+}
+
+/* Nosotros */
+
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 60px 5vw; /* Reduce el espacio a los lados en pantallas más pequeñas */
+    }
+
+    .about-content {
+        max-width: 500px; /* Reduce el ancho máximo del contenido */
+        padding: 0 20px; /* Reduce el padding interno */
+    }
+
+    .about-content h2 {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+
+    .about-content p {
+        font-size: 0.9rem; /* Reduce el tamaño del texto descriptivo */
+    }
+
+    .contact-button {
+        font-size: 0.9rem; /* Reduce el tamaño del botón */
+        padding: 8px 16px; /* Reduce el padding del botón */
+    }
+
+    .about-image {
+        max-width: 400px; /* Reduce el ancho máximo de la imagen */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Cambia a una disposición vertical en pantallas más pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .about-content {
+        max-width: 600px; /* Aumenta el ancho máximo del contenido */
+        margin-bottom: 40px; /* Agrega espacio entre el contenido y la imagen */
+    }
+
+    .about-image {
+        max-width: 500px; /* Aumenta el ancho máximo de la imagen */
+    }
+}
+
+/* servicios */
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .service-card img {
+        height: 250px;
+    }
+
+    .service-info {
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+
+    .service-info h3 {
+        font-size: 1.1rem;
     }
 }

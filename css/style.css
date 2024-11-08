@@ -165,6 +165,17 @@ nav {
     font-size: 2.5rem;
     color: var(--color-text);
     margin-bottom: 40px;
+    position: relative;
+}
+
+.gallery-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-primary); /* Cambia el color si es necesario */
 }
 
 .gallery-container {
@@ -176,6 +187,18 @@ nav {
     padding: 20px;
 }
 
+.gallery-description {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las cards de las habitaciones */
 .room-card {
     position: relative;
     border-radius: 16px;
@@ -241,9 +264,9 @@ nav {
 }
 
 .room-info p {
-    display: flex; /* Para alinear el ícono y el texto en la misma línea */
+    display: flex;
     align-items: center;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
 .room-info i {
@@ -279,7 +302,9 @@ nav {
 
 .btn-reservar:hover {
     background-color: rgba(255, 68, 0, 0.702);
-}
+};
+
+
 
 /* Servicios */
 
@@ -292,16 +317,38 @@ nav {
     padding: 80px 20px;
     background-color: #ffffff;
     height: 100vh;
-    box-sizing: border-box;
-    
+    width: 100%;
+    margin: 0;
+    position: relative;
+    margin-bottom: 80px;
 }
 
-/* Título de la sección */
+/* Títulos de la sección */
+.services h3 {
+    font-size: 1.5rem;
+    color: #fef5f5;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
 .section-title {
-    font-size: 3rem;
-    color: #333;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--color-text);
     margin-bottom: 40px;
-    margin-top: 40px;
+    position: relative;
+    width: 100%;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-primary);
 }
 
 /* Contenedor de las tarjetas de servicio */
@@ -311,9 +358,13 @@ nav {
     gap: 40px;
     max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-top: 20px; /* Agregado margen superior para separar del título */
+    padding-bottom: 80px; /* Agregado margen inferior para separar del footer */
 }
 
-/* Estilo de cada tarjeta de servicio */
+/* Resto de los estilos de servicios permanecen igual */
 .service-card {
     position: relative;
     overflow: hidden;
@@ -322,21 +373,18 @@ nav {
     transition: transform 0.3s;
 }
 
-/* Imagen dentro de cada tarjeta con efecto de zoom */
 .service-card img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     display: block;
     transition: transform 1.1s;
 }
 
-/* Efecto de zoom en la imagen al hacer hover */
 .service-card:hover img {
     transform: scale(1.1);
 }
 
-/* Capa de superposición oscura para el efecto de oscurecimiento */
 .service-card .overlay {
     position: absolute;
     top: 0;
@@ -352,18 +400,6 @@ nav {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.service-card::after {
-    content: "";
-    display: block;
-    height: 8px;
-    background-color: var(--color-primary);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-/* Información del servicio */
 .service-info {
     position: absolute;
     bottom: 0;
@@ -457,7 +493,146 @@ nav {
     border-radius: 5px;
 }
 
+/* La sección ocupará toda la altura y anchura de la pantalla */
+.ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    background-color: #f4f4f4;
+    /* Color de fondo */
+}
 
+.ubicacion h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* El iframe del mapa ocupará el 70% del ancho de la página */
+.ubicacion iframe {
+    width: 70%;
+    /* Ocupa el 70% de la pantalla en ancho */
+    height: 500px;
+    /* Ajusta la altura del mapa */
+    border: none;
+    /* Elimina el borde del iframe */
+    border-radius: 8px;
+    /* Bordes redondeados para el iframe */
+}
+
+/* Sección de Contacto */
+.contact {
+    padding: 40px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: var(--color-text);
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: rgba(255, 68, 0, 0.702);
+}
+
+/* Pie de página */
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icon i {
+    font-size: 20px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transition: height 0.8s ease;
+    z-index: 1;
+}
+
+.social-icon:hover::before {
+    height: 100%;
+}
+
+.social-icon:hover i {
+    color: #fff;
+}
+
+#facebook::before { background-color: #1877F2; }
+#instagram::before { background-color: #E4405F; }
+#whatsapp::before { background-color: #25D366; }
+
+#facebook:hover { border-color: #1877F2; }
+#instagram:hover { border-color: #E4405F; }
+#whatsapp:hover { border-color: #25D366; }
+
+.footer p {
+    color: #000000;
+    margin: 0;
+}
 
 /* Media Queries */
 @media (max-width: 998px) {
@@ -545,69 +720,74 @@ nav {
 
 @media (max-width: 1024px) {
     .about-section {
-        padding: 60px 5vw; /* Reduce el espacio a los lados en pantallas más pequeñas */
+        padding: 60px 5vw;
+        /* Reduce el espacio a los lados en pantallas más pequeñas */
     }
 
     .about-content {
-        max-width: 500px; /* Reduce el ancho máximo del contenido */
-        padding: 0 20px; /* Reduce el padding interno */
+        max-width: 500px;
+        /* Reduce el ancho máximo del contenido */
+        padding: 0 20px;
+        /* Reduce el padding interno */
     }
 
     .about-content h2 {
-        font-size: 2rem; /* Reduce el tamaño del título */
+        font-size: 2rem;
+        /* Reduce el tamaño del título */
     }
 
     .about-content p {
-        font-size: 0.9rem; /* Reduce el tamaño del texto descriptivo */
+        font-size: 0.9rem;
+        /* Reduce el tamaño del texto descriptivo */
     }
 
     .contact-button {
-        font-size: 0.9rem; /* Reduce el tamaño del botón */
-        padding: 8px 16px; /* Reduce el padding del botón */
+        font-size: 0.9rem;
+        /* Reduce el tamaño del botón */
+        padding: 8px 16px;
+        /* Reduce el padding del botón */
     }
 
     .about-image {
-        max-width: 400px; /* Reduce el ancho máximo de la imagen */
+        max-width: 400px;
+        /* Reduce el ancho máximo de la imagen */
     }
 }
 
 @media (max-width: 768px) {
     .about-section {
-        flex-direction: column; /* Cambia a una disposición vertical en pantallas más pequeñas */
-        text-align: center; /* Centra el texto */
+        flex-direction: column;
+        /* Cambia a una disposición vertical en pantallas más pequeñas */
+        text-align: center;
+        /* Centra el texto */
     }
 
     .about-content {
-        max-width: 600px; /* Aumenta el ancho máximo del contenido */
-        margin-bottom: 40px; /* Agrega espacio entre el contenido y la imagen */
+        max-width: 600px;
+        /* Aumenta el ancho máximo del contenido */
+        margin-bottom: 40px;
+        /* Agrega espacio entre el contenido y la imagen */
     }
 
     .about-image {
-        max-width: 500px; /* Aumenta el ancho máximo de la imagen */
+        max-width: 500px;
+        /* Aumenta el ancho máximo de la imagen */
     }
 }
 
 /* servicios */
 
 @media (max-width: 768px) {
+    .services h3 {
+        font-size: 1.3rem;
+    }
+
     .section-title {
         font-size: 2.5rem;
     }
 
     .service-cards {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .service-card img {
-        height: 250px;
-    }
-
-    .service-info {
-        padding: 15px 0;
-        font-size: 1rem;
-    }
-
-    .service-info h3 {
-        font-size: 1.1rem;
+        padding: 0 10px;
     }
 }
